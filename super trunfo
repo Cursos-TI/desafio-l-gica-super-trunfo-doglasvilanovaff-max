@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <string.h>
+
+// Desafio Super Trunfo - Cidades
+// Tema 2 - Comparação das Cartas
+
+int main() {
+    // Definição das variáveis para armazenar as propriedades das cidades
+    char nomeA[50], nomeB[50];
+    int populacaoA, populacaoB;
+    float areaA, areaB;
+    double pibA, pibB;
+
+    // Cadastro da Carta 1
+    printf("--- Cadastro da Carta 1 ---\n");
+    printf("Digite o nome da cidade: ");
+    scanf("%49s", nomeA); // Usamos %49s para evitar buffer overflow
+    printf("Digite a populacao (em habitantes): ");
+    scanf("%d", &populacaoA);
+    printf("Digite a area (em km2): ");
+    scanf("%f", &areaA);
+    printf("Digite o PIB (em bilhoes de dolares): ");
+    scanf("%lf", &pibA);
+
+    printf("\n");
+
+    // Cadastro da Carta 2
+    printf("--- Cadastro da Carta 2 ---\n");
+    printf("Digite o nome da cidade: ");
+    scanf("%49s", nomeB);
+    printf("Digite a populacao (em habitantes): ");
+    scanf("%d", &populacaoB);
+    printf("Digite a area (em km2): ");
+    scanf("%f", &areaB);
+    printf("Digite o PIB (em bilhoes de dolares): ");
+    scanf("%lf", &pibB);
+
+    printf("\n");
+
+    // Comparação de Cartas:
+    printf("--- Resultado da Partida ---\n");
+
+    // Comparação por População
+    printf("Comparando populacao:\n");
+    if (populacaoA > populacaoB) {
+        printf("%s venceu %s com populacao de %d.\n", nomeA, nomeB, populacaoA);
+    } else if (populacaoB > populacaoA) {
+        printf("%s venceu %s com populacao de %d.\n", nomeB, nomeA, populacaoB);
+    } else {
+        printf("Empate na populacao. Ambos com %d habitantes.\n", populacaoA);
+    }
+    printf("\n");
+
+    // Comparação por Área
+    printf("Comparando area:\n");
+    if (areaA > areaB) {
+        printf("%s venceu %s com area de %.2f km2.\n", nomeA, nomeB, areaA);
+    } else if (areaB > areaA) {
+        printf("%s venceu %s com area de %.2f km2.\n", nomeB, nomeA, areaB);
+    } else {
+        printf("Empate na area. Ambos com %.2f km2.\n", areaA);
+    }
+    printf("\n");
+
+    // Comparação por PIB
+    printf("Comparando PIB:\n");
+    if (pibA > pibB) {
+        printf("%s venceu %s com PIB de %.2f bilhoes de dolares.\n", nomeA, nomeB, pibA);
+    } else if (pibB > pibA) {
+        printf("%s venceu %s com PIB de %.2f bilhoes de dolares.\n", nomeB, nomeA, pibB);
+    } else {
+        printf("Empate no PIB. Ambos com %.2f bilhoes de dolares.\n", pibA);
+    }
+    printf("\n");
+
+    return 0;
+}
